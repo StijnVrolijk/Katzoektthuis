@@ -5,7 +5,6 @@ namespace KatZoektThuis\MapBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use SumoCoders\FrameworkMultiUserBundle\Entity\User;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Router;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
