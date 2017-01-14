@@ -10,7 +10,7 @@ use SumoCoders\FrameworkMultiUserBundle\Entity\User;
 
 /**
  * @ORM\Table()
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="KatZoektThuis\UserBundle\Repository\KatZoektThuisUserRepository")
  */
 class KatZoektThuisUser extends User
 {
