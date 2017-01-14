@@ -1,0 +1,7 @@
+kzt_default page:
+  defaults: { _controller: kzt_map_controller:indexAction }
+  path: /
+
+kzt_map:
+  defaults: { _controller: kzt_map_controller:indexAction }
+  path: /map

@@ -1,1 +1,6 @@
 services:
+  kzt_map_controller:
+    class: KatZoektThuis\MapBundle\Controller\MapController
+    arguments:
+      - "@security.token_storage"
+      - "@router"
