@@ -1,0 +1,6 @@
+services:
+  kat_zoekt_thuis_user_repository:
+    class: KatZoektThuis\UserBundle\Repository\KatZoektThuisUserRepository
+    factory: ["@doctrine.orm.default_entity_manager", getRepository]
+    arguments:
+      - KatZoektThuisUserBundle:KatZoektThuisUser
