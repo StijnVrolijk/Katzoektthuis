@@ -70,11 +70,11 @@ class KatZoektThuisUser extends User
         $plainPassword,
         $displayName,
         $email,
-        $id = null,
-        PasswordResetToken $token = null,
         $address = null,
         $phoneNumber = null,
-        KatZoektThuisUser $buddy = null
+        KatZoektThuisUser $buddy = null,
+        $id = null,
+        PasswordResetToken $token = null
     ) {
         parent::__construct($username, $plainPassword, $displayName, $email, $id, $token);
 
