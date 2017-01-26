@@ -4,3 +4,4 @@ services:
     arguments:
       - "@security.token_storage"
       - "@router"
+      - "@kat_zoekt_thuis_user_repository"

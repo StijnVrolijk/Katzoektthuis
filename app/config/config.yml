@@ -52,6 +52,7 @@ twig:
     jsData: "@framework.jsData"
     locales: %locales%
     maps_api_key: %google.maps.api_key%
+    geocoding_api_key: '%%google.geocoding.api_key%'
   form_themes:
     - 'SumoCodersFrameworkCoreBundle:Form:fields.html.twig'
 

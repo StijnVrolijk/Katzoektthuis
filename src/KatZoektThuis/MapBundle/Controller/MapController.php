@@ -2,6 +2,7 @@
 
 namespace KatZoektThuis\MapBundle\Controller;
 
+use KatZoektThuis\UserBundle\Repository\KatZoektThuisUserRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use SumoCoders\FrameworkMultiUserBundle\Entity\User;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -16,16 +17,22 @@ class MapController
     /** @var Router */
     private $router;
 
+    /** @var KatZoektThuisUserRepository */
+    private $userRepository;
+
     /**
      * @param TokenStorageInterface $tokenStorage
      * @param Router $router
+     * @param KatZoektThuisUserRepository $userRepository
      */
     public function __construct(
         TokenStorageInterface $tokenStorage,
-        Router $router
+        Router $router,
+        KatZoektThuisUserRepository $userRepository
     ) {
         $this->tokenStorage = $tokenStorage;
         $this->router = $router;
+        $this->userRepository = $userRepository;
     }
 
     /**
@@ -43,6 +50,8 @@ class MapController
             );
         }
 
-        return [];
+        return [
+            'users' => $this->userRepository->findAll(),
+        ];
     }
 }

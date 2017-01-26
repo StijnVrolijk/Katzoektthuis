@@ -7,12 +7,53 @@
 {% block main %}
   <div class="row">
     <div class="col-md-12">
+      <table class="table">
+      {% for user in users %}
+        <tr>
+          <td>{{ user }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.address }}</td>
+          <td>{{ user.phoneNumber }}</td>
+          <td>{{ user.buddy }}</td>
+        </tr>
+      {% endfor %}
+      </table>
       <div id="map" data-role="kzt-map"></div>
     </div>
   </div>
 {% endblock %}
 
 {% block javascripts %}
+  <script>
+    var users = [];
+
+    {% for user in users %}
+      var user = {
+        'id' : {{ user.id }},
+        'name' : '{{ user }}',
+        'email' : '{{ user.email }}',
+        'address' : '{{ user.address }}',
+        'phoneNumber' : '{{ user.phoneNumber }}',
+        'buddyOf' : []
+      };
+
+      {% if user.buddy %}
+        user.buddy = {
+          'id': {{ user.buddy.id }},
+          'name': '{{ user.buddy }}'
+        };
+      {% endif %}
+
+      {% for buddy in user.buddyOf %}
+        user.buddyOf.push({
+            'id' : {{ buddy.id }},
+            'name' : '{{ buddy }}'
+        });
+      {% endfor %}
+
+      users.push(user);
+    {% endfor %}
+  </script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ maps_api_key }}"></script>
   <script type="text/javascript" src="{{ asset('assets/js/mapbundle.map.js') }}"></script>
 {% endblock %}
