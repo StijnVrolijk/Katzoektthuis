@@ -7,7 +7,7 @@ services:
   multi_user.user_repository.collection:
     class: SumoCoders\FrameworkMultiUserBundle\User\UserRepositoryCollection
     arguments:
-      - ["@kat_zoekt_thuis_user_repository"]
+      - ["@kat_zoekt_thuis_user_repository", "@veterinary_repository"]
 
   sumocoders.user_provider:
     class: SumoCoders\FrameworkMultiUserBundle\Security\ObjectUserProvider

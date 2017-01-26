@@ -4,3 +4,9 @@ services:
     factory: ["@doctrine.orm.default_entity_manager", getRepository]
     arguments:
       - KatZoektThuisUserBundle:KatZoektThuisUser
+
+  veterinary_repository:
+    class: KatZoektThuis\UserBundle\Repository\VeterinaryRepository
+    factory: ["@doctrine.orm.default_entity_manager", getRepository]
+    arguments:
+      - KatZoektThuisUserBundle:Veterinary

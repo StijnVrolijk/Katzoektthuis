@@ -22,7 +22,7 @@ class KatZoektThuisUser extends User
      *     nullable = true
      * )
      */
-    private $address;
+    protected $address;
 
     /**
      * @var string
@@ -32,7 +32,7 @@ class KatZoektThuisUser extends User
      *     nullable = true
      * )
      */
-    private $phoneNumber;
+    protected $phoneNumber;
 
     /**
      * @var User
@@ -42,7 +42,7 @@ class KatZoektThuisUser extends User
      *     inversedBy = "buddyOf"
      * )
      */
-    private $buddy;
+    protected $buddy;
 
     /**
      * @var Collection
@@ -52,7 +52,7 @@ class KatZoektThuisUser extends User
      *     mappedBy = "buddy"
      * )
      */
-    private $buddyOf;
+    protected $buddyOf;
 
     /**
      * @param string $username
